@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+{% block page_title %}
+  <title>Ecoleta | Resultado da pesquisa</title>
+{% endblock page_title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="styles/search-results.css" />
+{% endblock styles %}
+
+{% set page_id = "page-search-results" %}
+      
+{% block content %}
+  {% include "partials/page-header.njk" %}
+
+  <main>
+    <h4>
+      <strong>{{ total_places }} pontos</strong>
+      encontrados
+    </h4>
+
+    {% if total_places > 0 %}
+      <div class="cards">
+        {% for place in places %}
+          <div class="card">
+            <img
+              src="{{ place.image }}"
+              alt=""
+            />
+            <h1>{{ place.name }}</h1>
+            <h3>{{ place.items }}</h3>
+            <p>
+              {{ place.city }}, {{ place.state }} <br />
+              {{ place.address }} <br />
+              {{ place.number }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <strong>Nenhum local não encontrado!</strong>
+    {% endif %}
+  </main>
+{% endblock content %}

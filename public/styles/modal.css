@@ -1,0 +1,81 @@
+#modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 10, 20, 0.95);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#modal .content {
+  width: 100%;
+  max-width: 420px;
+  color: white;
+}
+
+#modal .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+#modal .header h1 {
+  color: white;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+#modal .header button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url("../assets/x.svg");
+  background-position: center;
+  cursor: pointer;
+
+  font-size: 0px;
+}
+
+#modal form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#modal form .field {
+  display: flex;
+}
+
+#modal form input {
+  flex: 1;
+  background-color: #f0f0f5;
+  border: 0;
+  border-radius: 8px 0 0 8px;
+  padding: 16px;
+  font-size: 16px;
+  color: #6c6c80;
+}
+
+#modal form button {
+  width: 72px;
+  height: 56px;
+  background: var(--primary-color);
+  border: 0;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+#modal form input,
+#modal form button {
+  outline: 0;
+}
